@@ -48,6 +48,7 @@ document.addEventListener("click",function(event){
         interval = setInterval(draw,speed);
     }
 });
+// Funcion para el comportamiento si se eliminan todos los bloques
 function win (){
     ctx.clearRect(0,0,c.width,c.height);
     clearInterval(interval);
