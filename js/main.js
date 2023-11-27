@@ -11,6 +11,8 @@ var blockMap = [];
 var mouseX = 0;
 var speed = 25;
 var blockCount = 25;
+var audioBar = new Audio('./files/SpeechOn.wav');
+var audioBlock = new Audio('./files/chord.wav');
 
 
 // Funcion para incializar el mapa de valores 
@@ -48,7 +50,6 @@ document.addEventListener("click",function(event){
         interval = setInterval(draw,speed);
     }
 });
-// Funcion para el comportamiento si se eliminan todos los bloques
 function win (){
     ctx.clearRect(0,0,c.width,c.height);
     clearInterval(interval);
@@ -104,6 +105,10 @@ function checkBar(){
 
     let nextPos = blockMap[y + dy+ radius][x];
     if(nextPos >= -5 && nextPos <= 5 ){
+
+        audioBar.pause();
+        audioBar.currentTime = 0;
+        audioBar.play();
         dy = -dy;
         dx = nextPos;
     }
@@ -147,6 +152,10 @@ function draw(){
         dy = -dy;
         fillMap(delX,delY,delEndX,delEndY,false);
         changeInterval();
+        
+        audioBlock.pause();
+        audioBlock.currentTime = 0;
+        audioBlock.play();
         blockCount--;
         ctx.clearRect(delX,delY,delEndX - delX,delEndY - delY);
     }
@@ -157,6 +166,10 @@ function draw(){
         dy = -dy;
         fillMap(delX,delY,delEndX,delEndY,false);
         changeInterval();
+
+        audioBlock.pause();
+        audioBlock.currentTime = 0;
+        audioBlock.play();
         blockCount--;
         ctx.clearRect(delX,delY,delEndX - delX,delEndY - delY);
     }
@@ -170,6 +183,10 @@ function draw(){
         dx = -dx;
         fillMap(delX,delY,delEndX,delEndY,false);
         changeInterval();
+
+        audioBlock.pause();
+        audioBlock.currentTime = 0;
+        audioBlock.play();
         blockCount--;
         ctx.clearRect(delX,delY,delEndX - delX,delEndY - delY);
     }
@@ -185,6 +202,9 @@ function draw(){
         fillMap(delX,delY,delEndX,delEndY,false);
         changeInterval();
 
+        audioBlock.pause();
+        audioBlock.currentTime = 0;
+        audioBlock.play();
         ctx.clearRect(delX,delY,delEndX - delX,delEndY - delY);
     }
     if (y + dy + radius == 360){
