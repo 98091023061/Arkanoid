@@ -118,7 +118,7 @@ function checkBar(){
 function drawBall (){
     ctx.beginPath();
     ctx.arc(x , y , radius , 0, 2 * Math.PI);
-    ctx.fillStyle = "#0066cc";
+    ctx.fillStyle = "#000066";
     ctx.fill();
     ctx.closePath();
 }
