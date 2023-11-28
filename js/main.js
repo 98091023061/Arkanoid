@@ -95,7 +95,7 @@ function updateBar(){
 }
 // funcion para dibujar la barra
 function drawBar(){
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "red";
 
     ctx.fillRect(mouseX-50+radius, 360, 90 - radius, 5);
 
@@ -240,7 +240,7 @@ function blocks (){
             if (blockMap[rectY][rectX] == -10)continue;
             fillMap(rectX,rectY,rectX + 100 ,rectY + 20,  true);
             
-            ctx.fillStyle = "blue";
+            ctx.fillStyle = "red";
             ctx.fillRect(rectX, rectY, 100, 20);
             }
         }
