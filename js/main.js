@@ -240,7 +240,7 @@ function blocks (){
             if (blockMap[rectY][rectX] == -10)continue;
             fillMap(rectX,rectY,rectX + 100 ,rectY + 20,  true);
             
-            ctx.fillStyle = "brown";
+            ctx.fillStyle = "green";
             ctx.fillRect(rectX, rectY, 100, 20);
             }
         }
