@@ -50,6 +50,7 @@ document.addEventListener("click",function(event){
         interval = setInterval(draw,speed);
     }
 });
+// Funcion para establecer comportamiento en caso de ganar
 function win (){
     ctx.clearRect(0,0,c.width,c.height);
     clearInterval(interval);
