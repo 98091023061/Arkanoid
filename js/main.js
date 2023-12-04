@@ -1,7 +1,7 @@
-// Declaracion de variables
+
+// Inicializacion de variables
 var c = document.getElementById("arkanoidCanva");
 var ctx = c.getContext("2d");
-// Inicializacion de variables
 var radius = 10;
 var x = c.width / 2;
 var y = c.height - 70;
