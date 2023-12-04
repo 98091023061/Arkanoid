@@ -1,4 +1,4 @@
-
+// Declaracion de variables
 var c = document.getElementById("arkanoidCanva");
 var ctx = c.getContext("2d");
 // Inicializacion de variables
