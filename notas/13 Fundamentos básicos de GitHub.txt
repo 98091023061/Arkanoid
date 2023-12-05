@@ -11,3 +11,5 @@ El comando git fetch descarga los cambios del repositorio remoto a tu repositori
  
 cd .. vuelve hacia atras en cmd de la carpeta q estes
 
+git remote -v muestra los repositorios remotos configurados
+
