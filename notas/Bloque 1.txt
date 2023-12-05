@@ -1,0 +1,108 @@
+1Ramas 
+Principales: 
+Rama master: La rama master es la rama principal de un repositorio Git. 
+Contiene la versión estable y funcional del software, es decir, la versión
+ que está lista para ser desplegada en producción. Esta rama es la referencia
+ principal para el desarrollo y se utiliza para fusionar las nuevas funcionalidades
+ una vez que han sido probadas y validadas.
+
+Rama develop: La rama develop es una rama de desarrollo que se utiliza para integrar
+ y probar las nuevas funcionalidades antes de ser fusionadas con la rama master. 
+ En esta rama se trabajan las nuevas características y se realizan pruebas para garantizar
+ que funcionen correctamente. Una vez que las funcionalidades han sido probadas y
+ validadas, se fusionan con la rama master a través de un proceso de fusión (merge)
+ para formar la nueva versión estable del software.
+
+Auxiliares
+feature: Una rama feature es una rama de desarrollo que se utiliza para trabajar 
+en una nueva funcionalidad o característica del software. Esta rama se crea a partir
+ de la rama de desarrollo principal y se utiliza para desarrollar y probar la nueva 
+ funcionalidad antes de ser fusionada de nuevo a la rama principal.
+
+release: Una rama release es una rama de desarrollo que se utiliza para preparar
+ una versión del software para su lanzamiento. En esta rama se realizan pruebas finales,
+ se corrigen errores y se prepara la documentación necesaria para el lanzamiento. 
+ Una vez que la versión está lista, la rama release se fusiona con la rama principal
+ y se etiqueta como la versión oficial del software.
+
+Hotfix: Un hotfix es una corrección rápida de un error crítico en el software que
+ requiere una solución inmediata. Se crea una rama de hotfix a partir de la rama 
+ principal, se corrige el error y se prueba la solución. Una vez que el hotfix ha
+ sido probado y validado, se fusiona con la rama principal y se despliega en producción
+ lo antes posible para solucionar el problema.
+ 
+git branch nuevaRama	crea la rama nuevaRama
+
+Merge
+
+git merge derivadas hace merge de la rama derivadas a la rama actual 
+
+git branch -d derivadas elimina la rama derivadas , se debe hacer luego de hacer
+merge de la rama derivada en master
+
+git checkout -b nuevaRama crea la rama nuevaRama y hace checkout hacia ella
+
+Tags
+
+git tag mitag01  crear un tag
+git tag listar tags creados
+git tag -d mitag01 elimina el tag mitag01
+
+git tag -a v2.0.0 -m "Mi segunda version del proyecto"  agrega un tag con id detras de -a
+y descripcion detras de -m
+
+git tag -a v1.0.0  [hash del commit asociado] -m "mi primera version del proyecto"
+hacerle un tag al commit con el hash descrito
+
+git show v1.0.0 muestra la informacion completa del tag solicitado
+
+
+Stash
+
+stash es una caja donde se pueden guardar los progresos de manera temporal para centrarse 
+en otras funcionalidades
+
+git stash guarda los cambios no commiteados como work in progress WIP en la rama actual.
+
+git stash list listar los trabajos en progreso 
+
+git stash pop retomar los cambios q estaban en progreso al frente y elimina elimina la entrada 
+de los stash 
+
+git stash drop eliminar el stash 
+
+ver archivo de stash en la carpeta q amplia mas en el tema
+
+Rebase
+
+Genera un area temporal donde se desplazen commits de la rama en la q queremos unos cambios 
+q estan en master. 
+
+rebase interactivo 
+permite ordenar los commits 
+
+el git rebase se debe hacer desde la rama que se esta trabajando y apuntar hacia la nueva
+rama donde se quiere montar la rama en la que se esta trabajando 
+
+git rebase master  se hace el rebase de la rama en la que se esta trabajando hacia 
+el estado actual de master
+
+git rebase -i  HEAD~2 para unir dos commits en este caso en la pantalla siguiente que aparece
+se deb seleccionar la opcion squash en el ultimo commit para que se unan los dos en uno solo
+
+rebase -i HEAD~1 esta opcion activa el rebase interactivo en el ultimo commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

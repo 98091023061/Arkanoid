@@ -1,0 +1,76 @@
+Git curso 
+Clase primeros pasos 
+
+git config --global -e 
+devuelve un fichero con el nombre , email y las cosas que se han definido 
+con el caracter i se puede modificar fichero 
+luego de modificar se pulsa escape y luego  :wq para guardar y salir
+
+git init para inicializar el repositorio
+
+descripciones de los commits 
+
+cambiar el nombre del commit actual
+git commit --amend -m "Nombre del commit actual"
+
+revertir un commit
+git reset --soft HEAD^  regresamos a la edicion del ultimo commit que se realizo
+
+
+Alternativas
+git add folder/ se envia lo que esta  dentro de folder al escenario
+git reset file borra el archivo del stage
+git add *.exe agrega todos los archivos con extension .exe en la carpeta actual
+git add "*.exe" agrega todos los archivos con extension .exe en todo el proyecto
+
+crear un fichero .gitignore con la lista de archivos a ignorar por git
+se crea con comando echo > .gitignore
+
+se escribe adentro de .gitignore todos los ficheros o directorios que se quieren ignorar por git
+
+git log --oneline ver los log mas  resumidos
+
+git log --oneline --decorate --all --graph
+
+git status -s -b   acorta la respuesta del status y muestra la rama de cada archivo
+
+git config --global alias.s "status -s -b"   sustituye el texto detras de alias por el texto dentro de las comillas
+
+git config --global -e		mostrar el fichero config
+
+git config --global alias.l "log --oneline --decorate --all --graph"  sustitucion de l por la cadena del log modificado
+
+git diff muestra las diferencias del estado actual contra el ultimo commit
+
+git reset --soft HEAD^ 	elimina el ultimo commit y vuelve los archivos al stage
+
+git reset fichero saca el fichero del stage
+
+git checkout -- fichero regresa fichero al estado del ultimo commit
+
+git add -u actualiza stage al estado actual de la carpeta de git despues se hace commit para actualizar el repo
+
+git rm fichero elimina el fichero del repositorio y luego se hace commit para eliminar completamente de la carpeta local
+
+git mv fichero nuevoNombreDeFichero	nuevo nombre a fichero	luego se hace commit
+
+git mv fichero nuevaCarpeta/fichero mueve fichero a nuevaCarpeta
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

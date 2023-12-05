@@ -1,0 +1,13 @@
+gitHub
+
+git remote add origin [link] para agregar el repositorio del link como repositorio
+remoto del proyecto
+
+git push -u [rama]  enviar toda la informacion de la rama al repo origin
+
+El comando git fetch descarga los cambios del repositorio remoto a tu repositorio local
+, pero no los fusiona con tu rama actual. Esto te permite ver los cambios que se han
+ realizado en el repositorio remoto sin afectar tu trabajo actual.
+ 
+cd .. vuelve hacia atras en cmd de la carpeta q estes
+
