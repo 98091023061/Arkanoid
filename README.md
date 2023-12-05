@@ -12,9 +12,4 @@ ves lo facil q esta
 Testing merge
 
 
-
-Probando rama fork
-
-2da prueba a fork
-
-3ra prueba a fork
+Probando si puedo hacer push al repo original
