@@ -59,4 +59,35 @@ function Destructuracion(){
 }
 
 
-Destructuracion();
+// Destructuracion();
+
+function objetosLiterales(){
+    nombre = "Joel";    
+    edad = 25;  
+    const perro = {
+        nombre: nombre,
+        edad: edad,
+        ladrar:function(){
+            console.log("guauu Guauu!!");
+        }
+    }
+console.log(perro);
+perro.ladrar();
+
+const dog = {
+    nombre,
+    edad,
+    raza:"Callejero",
+    ladrar(){
+        console.log("guauu Guauu Guauu!!");
+    }
+}
+
+console.log(dog);
+dog.ladrar();
+}
+
+objetosLiterales();
+
+
+
