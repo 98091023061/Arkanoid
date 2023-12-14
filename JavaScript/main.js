@@ -114,9 +114,51 @@ function ParametroRestSpread(){
 
 }
 
-ParametroRestSpread();
+// ParametroRestSpread();
 
 
+function ArrowFunctions(){
+    
+    const saludo = nombre => console.log("Hola "+ nombre);
+
+    saludo("Joel");
+
+    // const sumar = function (a,b){
+    //     return a+b;
+    // }
+
+    const sumar = (a , b) => a+b;
+
+    console.log(sumar(8,9));
+
+    const numeros = [1,2,3,4,5];
+
+    numeros.forEach((el,index)=> console.log(el+' esta en la posicion '+index));
+
+
+    function Perro (){
+        console.log(this);
+    }
+    Perro();
+
+    const perro ={
+        nombre:"Joel",
+        ladrar:function(){
+            console.log(this);
+        },
+
+        ladrarArrow: ()=>{
+            console.log(this);
+        }
+    }
+
+    perro.ladrar(); 
+    perro.ladrarArrow(); 
+    
+    
+}
+
+ArrowFunctions();
 
 
 
