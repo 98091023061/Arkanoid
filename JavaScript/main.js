@@ -27,4 +27,36 @@ function try2(){
 
 }
 
-try2();
+// try2();
+
+function Destructuracion(){
+
+    const numeros = [1,2,3];
+    // sin destructuracion
+    let uno = numeros[0];
+    let dos = numeros[1];
+    let tres= numeros[2];
+    
+    // con destructuracion
+    
+    const[one,two,three] = numeros;
+    
+    console.log(one,two,three);
+    
+    
+    let persona = {
+        nombre:"Joel",
+        apellido:"Matos",
+        edad:25
+    }
+    
+    let{apellido,nombre,edad} = persona;
+    // El orden en el que asigna no importa pq coge el nombre de la 
+    // variable
+
+    console.log(nombre,apellido,edad);
+
+}
+
+
+Destructuracion();
