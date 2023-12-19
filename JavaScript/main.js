@@ -139,7 +139,7 @@ function ArrowFunctions(){
     function Perro (){
         console.log(this);
     }
-    Perro();
+    // Perro();
 
     const perro ={
         nombre:"Joel",
@@ -158,7 +158,44 @@ function ArrowFunctions(){
     
 }
 
-ArrowFunctions();
+// ArrowFunctions();
 
+function Prototipos(){
+// POO
+/*
+Clases-Modelo a seguir
+Objetos-Es una instancia de una clase
+    Atributos - es una caracteristica o propiedad del objeto(variables dentro de un objeto)
+    Metodos - Acciones que un objeto puede realizar (funciones dentro de un objeto)
+*/
+
+// const animal = {
+//     nombre:"snoopy",
+//     sonar(){
+//         console.log("Hago sonidos porque estoy vivo");
+//     }
+// }
+// console.log(animal);
+
+// Generando prototipos
+
+// Funcion constructora
+
+function Animal(nombre , genero){
+//  Atributos
+    this.nombre = nombre;
+    this.genero = genero;
+// Metodos
+    this.sonar = function(){
+        console.log("Hago sonidos porque estoy vivo");
+    }
+}
+const snoopy = new Animal("Snoopy","Macho"),
+lolaBunny = new Animal("Lola Bunny","Hembra");
+
+console.log(snoopy);
+console.log(lolaBunny);
+}
+Prototipos();
 
 
