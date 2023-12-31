@@ -181,19 +181,38 @@ Objetos-Es una instancia de una clase
 
 // Funcion constructora
 
+// function Animal(nombre , genero){
+// //  Atributos
+//     this.nombre = nombre;
+//     this.genero = genero;
+// // Metodos
+//     this.sonar = function(){
+//         console.log("Hago sonidos porque estoy vivo");
+//     }
+//     this.saludar = function(){
+//         console.log('Hola me llamo ' + this.nombre);
+//     }
+// }
+
+// Funcion constructora donde asignamos metodos a prototipos
 function Animal(nombre , genero){
-//  Atributos
-    this.nombre = nombre;
-    this.genero = genero;
-// Metodos
-    this.sonar = function(){
-        console.log("Hago sonidos porque estoy vivo");
+    //  Atributos
+        this.nombre = nombre;
+        this.genero = genero;
     }
+// Metodos agregados al prototipo de la funcion constructora
+Animal.prototype.sonar = function(){
+    console.log("Hago sonidos porque estoy vivo");
 }
+Animal.prototype.saludar = function(){
+    console.log('Hola me llamo ' + this.nombre);
+}
+    
 const snoopy = new Animal("Snoopy","Macho"),
 lolaBunny = new Animal("Lola Bunny","Hembra");
 
 console.log(snoopy);
+snoopy.saludar();
 console.log(lolaBunny);
 }
 Prototipos();
