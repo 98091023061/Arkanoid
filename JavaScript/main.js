@@ -4,7 +4,7 @@ function TryCatch(){
         console.log("En el try se agrega el codigo a evaluar");
         noExiste;
     }catch(error){
-        // console.log("Catch captura los errores del try")
+        console.log("Catch captura los errores del try")
         console.log(error)
     }finally{
         console.log("El bloque finally se ejecuta al final de un bloque try catch");
@@ -12,11 +12,11 @@ function TryCatch(){
 }
 
 
-// TryCatch();
+//  TryCatch();
 
 function try2(){
     try{
-        let numero = "a";
+        let numero = "3";
         if(isNaN(numero)){
             throw new Error("El caracter introducido no es un numero");
         }
@@ -28,6 +28,7 @@ function try2(){
 }
 
 // try2();
+
 
 function Destructuracion(){
 
@@ -44,13 +45,12 @@ function Destructuracion(){
     console.log(one,two,three);
     
     
-    let persona = {
-        nombre:"Joel",
-        apellido:"Matos",
-        edad:25
-    }
     
-    let{apellido,nombre,edad} = persona;
+    let{apellido,nombre,edad} = {
+        nombre: "Joel",
+        apellido: "Matos",
+        edad: 25
+    };
     // El orden en el que asigna no importa pq coge el nombre de la 
     // variable
 
@@ -215,6 +215,21 @@ console.log(snoopy);
 snoopy.saludar();
 console.log(lolaBunny);
 }
-Prototipos();
+// Prototipos();
+
+function GlobalLocalVar(){
+
+    var hola = "Hola Mundo";//Function Scope declaration
+    let hello = "Hello World";//Block Scope declaration
+    bonjour = "hola en frances";//Global Scope declaration
+    console.log(hola);
+    console.log(hello);
+    console.log(window);//Object that contains everything on the window
+    console.log(window.bonjour);//will be shown because bonjour is a global object
+    console.log(window.hello);//will not be shown because hello is locally declared
+    
+
+}
 
 
+GlobalLocalVar();
