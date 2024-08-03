@@ -1,3 +1,61 @@
+function arreglo (){
+    const b = [1, true,"Hola",["A","B","C"]];
+    const a=[];
+
+    // console.log(a);
+    // console.log(b);        
+    // console.log(b.length );
+    
+    const c = Array.of("X","Y","Z",9,8,7);
+    // console.log(c);
+
+    const d = Array(100).fill(false);
+    // console.log(d);
+
+    // metodos
+    const colores = ["Rojo","Verde", "Azul"];
+    console.log(colores);
+    
+    colores.push("Negro"); //Agregar elemento al final
+    console.log(colores);
+    
+    colores.pop();  //Eliminar ultimo elemento
+    console.log(colores);
+
+    colores.forEach(function(el,index){
+        console.log(`<li id="${index}">${el}</li>`);
+    })
+
+
+
+}
+
+arreglo();
+
+function constante(){
+    const PI = 3.1416;
+    console.log(PI);
+    
+    let objeto = {//declaracion de objeto por utilizar {}
+        nombre:"Jon",
+        edad: 35
+    }
+
+    let colores = ["blanco",//Declaracion de arreglo por utilizar []
+        "negro","azul"
+    ];
+    console.log(objeto);
+    console.log(colores);
+ 
+    objeto.correo = "jonmircha@gmail.com";
+    colores.push("anaranjado");
+
+    console.log(objeto);
+    console.log(colores);
+}
+
+// constante();
+
 function TryCatch(){
 
     try {
@@ -232,4 +290,4 @@ function GlobalLocalVar(){
 }
 
 
-GlobalLocalVar();
+// GlobalLocalVar();
