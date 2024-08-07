@@ -1,3 +1,41 @@
+function objeto(){
+    const b ={
+
+    }
+    console.log(b);//con {} es un objeto, con [] es un arreglo
+
+    const joel = {
+        nombre:"Joel",
+        apellido:"Matos",
+        edad:25,
+        pasatiempos:["Jugar","Programar","Musica"],
+        soltero:true,
+        contacto:{
+            email:"beymaxjd@gmail.com",
+            number:"58937057"
+        },
+        saludar: function(){
+            console.log("hola");
+        },
+        decirMiNombre: function(){
+            console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes contactar por ${this.contacto.email}`);
+        }
+    }
+    console.log(joel);
+    console.log(joel.nombre);
+    console.log(joel.contacto.number);
+    joel.saludar();
+    joel.decirMiNombre();
+    /*dentro e un objeto las variables se llaman atributos
+    o propiedades y las funciones se llaman metodos*/
+    
+    console.log(Object.keys(joel));
+    console.log(Object.values(joel));
+    console.log(joel.hasOwnProperty("nombre"));
+
+}
+
+objeto();
 function arreglo (){
     const b = [1, true,"Hola",["A","B","C"]];
     const a=[];
@@ -30,7 +68,7 @@ function arreglo (){
 
 }
 
-arreglo();
+// arreglo();
 
 function constante(){
     const PI = 3.1416;
