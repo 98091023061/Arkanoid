@@ -222,7 +222,7 @@ function draw(){
             ctx.font = '30px Arial';
             ctx.fillStyle = 'black';
           
-            ctx.fillText('Game Over', 180, 280);
+            ctx.fillText('     Game Over', 180, 280);
           };
     }
         
