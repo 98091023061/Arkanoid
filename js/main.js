@@ -1,18 +1,22 @@
 
 // Inicializacion de variables
-var c = document.getElementById("arkanoidCanva");
-var ctx = c.getContext("2d");
-var radius = 10;
-var x = c.width / 2;
-var y = c.height - 70;
-var dx = -4 ;
-var dy = -4;
-var blockMap = [];
-var mouseX = 0;
-var speed = 25;
-var blockCount = 25;
-var audioBar = new Audio('./files/SpeechOn.wav');
-var audioBlock = new Audio('./files/chord.wav');
+let c = document.getElementById("arkanoidCanva");
+let computedStyle = window.getComputedStyle(c); 
+let PaddY = parseInt(computedStyle.top);
+let PaddX = parseInt(computedStyle.left);
+let ctx = c.getContext("2d");
+let radius = 10;
+let x = c.width / 2;
+let y = c.height - 70;
+let dx = -4 ;
+let dy = -4;
+let blockMap = [];
+let mouseX = 0;
+let speed = 25;
+let blockCount = 1;
+let audioBar = new Audio('./files/SpeechOn.wav');
+let audioBlock = new Audio('./files/chord.wav');
+let Restart = false;
 
 
 // Funcion para incializar el mapa de valores 
@@ -26,18 +30,18 @@ function cleanMap(){
 }
 // tracker de la posicion del mouse
 document.addEventListener("mousemove", function(event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+    mouseX = event.clientX - PaddX;
+    mouseY = event.clientY - PaddY;
 // valores limites de la variable que contiene la posicion x del mouse
-    if (mouseX > 590) mouseX = 590;
-    if (mouseX < 60) mouseX = 60;
+    if (mouseX > 590 ) mouseX = 590 ;
+    if (mouseX < 60 ) mouseX = 60 ;
     updateBar();
-
   });
 
 // listener para el clic del mouse en el boton de reset
 document.addEventListener("click",function(event){
-    if(mouseX>=275 && mouseX <= 325 && mouseY >= 175 && mouseY <= 225){
+    console.log(blockCount);
+    if(mouseX>=300 && mouseX <= 350 && mouseY >= 175 && mouseY <= 225 && Restart){
     // inicializacion de variables para nueva instancia del juego
         speed = 25;
         blockCount = 25;
@@ -47,6 +51,7 @@ document.addEventListener("click",function(event){
         y = c.height - 70;
         dx = -4 ;
         dy = -4;
+        Restart = false;
         interval = setInterval(draw,speed);
     }
 });
@@ -57,25 +62,13 @@ function win (){
     let imagen = new Image();
     imagen.src = "./files/Restart.jfif";
     imagen.onload = function() {
-        ctx.drawImage(imagen, 275, 175, 50, 50);
+        ctx.drawImage(imagen, 300, 175, 50, 50);
         ctx.font = '30px Arial';
         ctx.fillStyle = 'black';
       
-        ctx.fillText('Congrats , you win', 180, 280);
+        ctx.fillText('   Congrats , you win', 180, 280);
     }
-
-    if(mouseX>=275 && mouseX <= 325 && mouseY >= 175 && mouseY <= 225){
-        // inicializacion de variables para nueva instancia del juego
-            speed = 25;
-            blockCount = 25;
-            cleanMap();
-            clearInterval(interval);
-            x = c.width / 2;
-            y = c.height - 70;
-            dx = -4 ;
-            dy = -4;
-            interval = setInterval(draw,speed);
-    }
+    Restart = true;
 
 
 }
@@ -218,15 +211,13 @@ function draw(){
         let imagen = new Image();
         imagen.src = "./files/Restart.jfif";
         imagen.onload = function() {
-            ctx.drawImage(imagen, 275, 175, 50, 50);
+            ctx.drawImage(imagen, 300, 175, 50, 50);
             ctx.font = '30px Arial';
             ctx.fillStyle = 'black';
-          
-            ctx.fillText('     Game Over', 180, 280);
+            ctx.fillText('        Game Over', 180, 280);
+            Restart = true;
           };
     }
-        
-    
     x+= dx;
     y+= dy;
 }
@@ -249,7 +240,6 @@ function blocks (){
 
 // funcion para llenar el mapa de los valores que se le pasan de parametros
 function fillMap (x,y,xEnd,yEnd,fill) {
-    
 
     for (let i = x ; i<= xEnd;i ++){
         for(let j = y ; j <= yEnd ; j++){

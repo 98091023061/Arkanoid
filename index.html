@@ -6,8 +6,21 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Arkaniod</title>
 </head>
-<body>
 
+    <style>  
+        body {  
+            position: relative; /* Make sure the container is relative for absolute positioning */  
+            height: 100vh; /* Full height of the viewport to allow for positioning */  
+            margin: 0; /* Remove default margin */  
+        }  
+        #arkanoidCanva {  
+            position: absolute; /* Position the canvas absolutely */  
+            top: 50px; /* Set the vertical position */  
+            left: 300px; /* Set the horizontal position */  
+            border: solid black; /* Add a border for visibility */  
+        }  
+    </style>  
+<body>
     <canvas id="arkanoidCanva"  width= "650" height="400" style="border:solid black ;"></canvas>
     <script src="./js/main.js"></script>
     
