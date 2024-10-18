@@ -14,8 +14,8 @@ let blockMap = [];
 let mouseX = 0;
 let speed = 25;
 let blockCount = 25;
-let audioBar = new Audio('./files/SpeechOn.wav');
-let audioBlock = new Audio('./files/chord.wav');
+let audioBar = new Audio('./files/BarSound.wav');
+let audioBlock = new Audio('./files/BlockSound.wav');
 let Restart = false;
 
 
